@@ -12,6 +12,9 @@ export class AppComponent {
   constructor(private wordsSvc: WordsService) {}
 
   processWords(words: string[]): string[][] {
-    return words.map((word) => word.split(''));
+    return words.map((word) => {
+      const letters = word.split('');
+      return letters.join('_').split('');
+    });
   }
 }
