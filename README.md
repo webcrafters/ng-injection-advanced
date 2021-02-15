@@ -1,3 +1,18 @@
+
+WordsService furnizeaza urmatoarele cuvinte:
+
+'angular'
+'development'
+'rendering'
+'frontend'
+'application'
+'expression'
+'closure'
+'observable'
+'array'
+'code'
+'return'
+
 # Task 1
 
 Cuvintele furnizate de WordsService se afiseaza conform cu
