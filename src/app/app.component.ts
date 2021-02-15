@@ -13,7 +13,9 @@ export class AppComponent {
 
   processWords(words: string[]): string[][] {
     return words.map((word) => {
-      const letters = word.split('');
+      const letters = word
+        .split('')
+        .map((l, idx) => (idx % 2 == 0 ? l.toUpperCase() : l.toLowerCase()));
       return letters.join('_').split('');
     });
   }
