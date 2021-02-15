@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { WordsService } from './words.service';
+import { Component, Inject } from '@angular/core';
+import { WORDS_SERVICE } from './words/words.inj.token';
+import { IWordsService } from './words/words.service.interface';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +10,11 @@ import { WordsService } from './words.service';
 export class AppComponent {
   title = 'arrays-exercise';
   words$ = this.wordsSvc.getWords();
-  constructor(private wordsSvc: WordsService) {}
+  constructor(@Inject(WORDS_SERVICE) private wordsSvc: IWordsService) {}
 
   processWords(words: string[]): string[][] {
     return words.map((word) => {
-      const letters = word
-        .split('')
-        .map((l, idx) => (idx % 2 == 0 ? l.toUpperCase() : l.toLowerCase()));
+      const letters = word.split('');
       return letters.join('_').split('');
     });
   }
