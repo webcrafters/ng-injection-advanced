@@ -7,6 +7,7 @@ import { WORDS_SERVICE } from './words/words.inj.token';
 import { GithubZenWordsService } from './words/github-zen-words.service';
 import { DummyWordsService } from './words/dummy-words.service';
 import { TrumpWordsService } from './words/trump-words.service';
+import { DianaGhReposService } from './words/diana-gh-repos.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,9 +19,14 @@ import { TrumpWordsService } from './words/trump-words.service';
     //   useFactory: (http: HttpClient) => new GithubZenWordsService(http),
     //   deps: [HttpClient],
     // },
+    // {
+    //   provide: WORDS_SERVICE,
+    //   useFactory: (http: HttpClient) => new TrumpWordsService(http),
+    //   deps: [HttpClient],
+    // },
     {
       provide: WORDS_SERVICE,
-      useFactory: (http: HttpClient) => new TrumpWordsService(http),
+      useFactory: (http: HttpClient) => new DianaGhReposService(http),
       deps: [HttpClient],
     },
   ],
