@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { IWordsService } from './words.service.interface';
 
 @Injectable({
   providedIn: 'root',
 })
-export class WordsService {
+export class DummyWordsService implements IWordsService {
   private _words: string[] = [
     'angular',
     'development',

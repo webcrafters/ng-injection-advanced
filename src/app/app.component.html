@@ -1,0 +1,7 @@
+<div class="wrapper" *ngIf="words$ | async as words">
+  <div class="row" *ngFor="let rowLetters of processWords(words)">
+    <div class="letter" *ngFor="let letter of rowLetters">
+      {{ letter }}
+    </div>
+  </div>
+</div>

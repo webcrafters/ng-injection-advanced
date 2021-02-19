@@ -1,6 +1,17 @@
 # Angular dependency injection - advanced examples
 
+## Service interface & several implementations. 
 
-Service interface & several implementations - easy switching between, for example, mock service (development) and real data api services.
+Flexible injection by providing a service through a custom token in the app module.
 
-Check out branches
+Showcases easy switching between, for example, mock service (development) and real data api services.
+
+
+
+All the services implement the method `getWords(): Observable<string[]>`
+
+
+
+
+
+
